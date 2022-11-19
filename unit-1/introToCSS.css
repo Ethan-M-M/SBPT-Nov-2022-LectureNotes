@@ -1,0 +1,93 @@
+/* 
+    Building Blocks
+    
+    selector {
+        [Declaration Block]
+        property: value;
+    }
+
+    3 ways to target:
+    element, class, & id
+
+    *  Order of "Final Response" Hierarchy
+        - !important
+        - Inline CSS
+        - ID Selectors
+        - ClassSelectors
+        - Element
+    
+        */
+        
+        nav {
+            /* we are targeting the element */
+            background-color: #d2d2d2;
+            /* 
+                - preset colors: red, blue, yellow, etc.
+                - rgb & rgba (red, green, blue, alpha
+                    - alpha determines transparency
+                    - ex: rgba(200, 15, 100, .5);
+                - Hexidecimal
+                    - 16 digits: 0-9, A-F
+                    - ex: #d2d2d2    
+                     */
+            overflow: hidden;
+        }
+
+        /* IDs */
+    #home {
+        float: left;
+        color: red !important;
+        color: green !important;
+        /* important will take on the "last call" for !important */
+    }
+
+    /*  Targeting a Class */
+
+        .btn {
+            float: right;
+            color: black;
+            text-align: center;
+            width: 85px;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+/* 
+*Compound Operators:
+    > Refers to direct children of an element
+    , matching selector
+    + Immediate sibling of an element
+    ~ Subsequent sibling of an element
+*/
+
+nav .btn {
+    /* Points to the Nav and ANY class within it, or children of, named "btn" */
+    text-shadow: 2px 2px 2px rgba(0,0,0,.5)
+}
+        
+div .paragraph > p{
+    /* targeting any div with a class "paragraph" this is holding a <p> element */
+    color: red;
+}
+
+.paragraph + div {
+    color: purple;
+}
+
+a:hover {
+    color: lightblue;
+    /* mousing over any anchor tag will alter its color
+        - "home" doesn't change due to !important
+     */
+}
+
+a:active {
+    color: purple;
+    text-shadow: 2px 2px 2px rgb(255,255,255);
+    /* COPY A BLOCK OF CODE IN VSCODE
+        ALT+SHIFT+DownArrow
+
+        MOVE A BLOCK OF CODE
+        ALT+SHIFT+UpArrow */
+}
