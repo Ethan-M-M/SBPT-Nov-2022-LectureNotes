@@ -1,0 +1,32 @@
+header {
+    background-color: bisque;
+    display: block;
+    font-size: 50px;
+    text-align: center;
+    padding: 1px;
+    margin: 1px;
+
+}
+
+nav {
+    background-color: bisque;
+    display: block;
+    padding: 1px;
+    margin: 1px;
+    text-align: center;
+}
+
+.btn {
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+    margin: 20px;
+    font-size: 30px;
+
+}
+
+img {
+    display: inline-block;
+    padding: 5rem;
+    margin: 2rem;
+}
