@@ -1,0 +1,30 @@
+header {
+    width: 100vw;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 1rem;
+    text-align: center;
+  }
+  
+  div {
+    width: 100vw;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 1rem;
+  }
+  
+  .section2 {
+    display: flex;
+  }
+  
+  #image1 {
+    float: right;
+  }
+  
+  #image2 {
+    float: left;
+  }
+  
+  #text2 {
+    float: right;
+  }

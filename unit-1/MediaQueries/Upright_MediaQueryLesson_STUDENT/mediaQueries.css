@@ -1,0 +1,73 @@
+/*! Media Query Build */
+/*
+    Common units of measurement:
+        - Percentages - %
+        - Viewport Width: vw
+        - Viewport Height: vh
+        - Root Element Font-Size: rem;
+        - Parent Font-Size: em;
+
+    Using Media Queries
+        ex:
+            @media screen { <--- target screens only
+
+                div {   <---- element to adjust
+                    background-color: blue;   <--- attribute of element
+                }
+
+            }
+
+        AND
+            @media screen and (min-width:750px) {
+            
+            }
+        
+        OR
+            @media screen, (min-width:750px)  {
+
+            }
+
+        Build with Mobile First concept!
+*/
+
+@media (max-width: 420px) {
+    /*body {
+        background-color: darkred;  [used for testing]
+    } */
+
+    /* global */
+    p {
+        font-size: 16pt;
+    }
+
+    /* header */
+    nav ul {
+        padding: 0;
+    }
+
+    nav ul li {
+        font-size: x-large;
+        margin: 0 1.5rem;
+    }
+
+    /* menu */
+    .item-desc {
+        width: 100vw;
+    }
+
+    .desc {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .desc > p {
+        padding: 1rem 3rem;
+    }
+
+    /* foot */
+    footer {
+        font-size: x-large;
+    }
+
+}
+
