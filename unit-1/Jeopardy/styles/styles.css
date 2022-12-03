@@ -1,0 +1,242 @@
+header {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: larger;
+}
+
+.gamePicture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    margin: .5rem;
+}
+
+.playButton {
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+    border: 1px solid black;
+    background-color: lightgray;
+}
+
+#play {
+    list-style: none;
+    text-decoration: none;
+    padding: 2.5em;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-end;
+    padding: .5rem;
+    margin: 5rem;
+    border: 1px solid black;
+    background-color: lightgray; 
+}
+
+h1 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+h3 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+  }
+  
+  .category {
+    background-color: lightgrey;
+    border: solid black 2px;
+    padding: 1.5em;
+  }
+
+  .oneHundred {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  #one-hundred {
+    border: solid black 2px;
+    padding: 2.5em;
+  }
+  
+  .twoHundred {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  #two-hundred {
+    border: solid black 2px;
+    padding: 2.5em;
+  }
+
+  .threeHundred {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  #three-hundred {
+    border: solid black 2px;
+    padding: 2.5em;
+  }
+
+  .fourHundred {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  #four-hundred {
+    border: solid black 2px;
+    padding: 2.5em;
+  }
+
+  .fiveHundred {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  #five-hundred {
+    border: solid black 2px;
+    padding: 2.5em;
+  }
+
+  .sixHundred {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  #six-hundred {
+    border: solid black 2px;
+    padding: 2.5em;
+  }
+
+  .eightHundred {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  #eight-hundred {
+    border: solid black 2px;
+    padding: 2.5em;
+  }
+
+  .thousand {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  #one-thousand {
+    border: solid black 2px;
+    padding: 2.25em;
+  }
+
+  .nextButton {
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+    float: right;
+    border: 1px solid black;
+    background-color: lightgray;
+    padding: 1.5em;
+}
+
+#next {
+    list-style: none;
+    text-decoration: none;
+}
+
+.response {
+  display: flex;
+  justify-content: center;
+}
+
+#text {
+  margin: 5px;
+}
+
+#guess {
+  display: flex;
+  float: left;
+  margin: 5px;
+}
+
+#pass {
+  display: flex;
+  float: right;
+  margin: 5px;
+}
+
+#bet {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: .5rem;
+}
+
+.finalBet {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+
+#pointBetAmount {
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+#finalAnswer {
+  margin: auto;
+}
+
+#scores {
+  display: flex;
+  justify-content: space-around;
+}
+
+.finalCategory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-end;
+    padding: .5rem;
+    margin: 5rem;
+    border: 1px solid black;
+    background-color: lightgray;
+}
+
+.finalQuestion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-end;
+    padding: 15rem;
+    margin: 5rem;
+    border: 1px solid black;
+}

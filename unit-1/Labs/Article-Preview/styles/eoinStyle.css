@@ -1,0 +1,157 @@
+html {
+    width: 100%;
+}
+body {
+    margin: 0 ;
+    padding: 0;
+    width: 100%;
+    background-color: rgb(179, 167, 167);
+   /* width: 100%; */
+}
+
+/* header and Nav */
+#top-title, h1{
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: antiquewhite;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+
+    font-size: 1.6rem;
+}
+
+ .nav-links {
+    background-color: rgb(129, 141, 137);
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 17px 0;
+
+}
+.link  {
+ font-size:1.6rem;
+font-family: 'Times New Roman', Times, serif;
+list-style: none;
+
+
+
+}  
+.link a {
+  color: red;
+  text-decoration: none;
+
+
+}
+.link a:hover {
+    color: blue;
+}
+#hero {
+    display: inline-block;
+    width: 100%;
+
+
+}
+#hero img {
+
+    width: 60%;
+    padding: 6px;
+    margin: auto;
+
+
+}
+
+/* Article links/ sidebar  */
+#article-links  {
+  position:absolute;
+  top: 200px;
+  right: 6px;
+
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  width: 35%;
+
+}
+#article-links  a {
+font-size: 1em;
+color: black;
+text-decoration: none;
+
+
+}
+h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(12, 66, 48);
+    background-color: aliceblue;
+    width:70%;
+
+  }
+h3:hover {
+    color: rgb(149, 204, 165);
+    background-color: rgb(241, 72, 6);
+}  
+/* Main story section */
+.main-story{
+width: 60%;
+margin-left: 10px;
+
+}
+h2 {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3em;
+
+}
+b {
+    text-transform: capitalize;
+    color: brown;
+}
+p {
+    margin-left: 10px;
+    font-family: fantasy;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 1.1em;
+    padding: 2px;
+    position: static;
+    bottom: 10px;
+  left: 100vw;
+    background-color:rgb(12, 66, 48)
+}
+
+/* Media Queries */
+
+@media (min-width: 250px) and (max-width:600px) {
+
+ #hero > img {
+    width: 95%;
+
+
+
+ }
+
+ .main-story {
+    width: 95%;
+    margin-bottom: 60px;
+
+
+ }
+ #article-links{
+   position:static;
+   width:70%;
+   margin:0  auto;
+   box-shadow: 12px 7px 20px rgba(0,0,0,0.5);
+
+
+
+}
+.footer {
+    background-color:burlywood;
+}
+
+
+}
