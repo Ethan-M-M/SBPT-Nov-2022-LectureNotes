@@ -7,7 +7,7 @@ let marvelHero = {
 
 /*
 * Object Literal
-    Whenour values are written within our keys. "Hard Coded"
+    When our values are written within our keys. "Hard Coded"
 
     * Structure
 
