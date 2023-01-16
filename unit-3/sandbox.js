@@ -370,3 +370,235 @@ if (currentRoom == 'hallRoom' && playerInput.includes("Observe")) {
 if (currentRoom == 'bathRoom' && playerInput.includes("Observe")) {
   return bathRoom.description;
 };
+
+
+//------------------------ SUBMITTED PROJECT -----------------------------//
+
+export const gameDetails = {   
+  title: 'Zorkington v. Ethan M',
+  desc: 'Welcome to the world of Zorkington! Here are some quick rules & concepts: The goal is the explore the house and the items inside it. Everything is completed by using the input bar below. Type "Help" at any time to see a list of available commands. Typing in "Observe" will give you a description of the current room you are in. Typing "Items" will show you the objects you have collected so far. To move around, type in "Move to ____Room" with the location you are trying to get to filling in the blank. Type "Search" to look for items in the room. Type "Pick up ____" with an item in the blank to pick up a found object. That is all there is to it, have fun!',
+  author: 'Ethan Moskowitz',
+  cohort: 'SBPT-2022',
+  startingRoomDescription: 'What you see before you is... The Starting Room. It is probably best to click on QUICK NOTES above before you get started.'
+};
+
+
+// You code here
+
+
+export const domDisplay = (playerInput) => {  
+/* 
+      TODO: for students
+      - This function must return a string. 
+      - This will be the information that is displayed within the browsers game interface above the users input field.
+
+      - This function name cannot be altered. 
+      - "playerInput" is whatever text the user is typing within the input field in the browser after hitting the ENTER key.
+          - test this out with a console log.
+
+      What your player should be able to do (checklist):
+          - move between rooms
+          - view current room
+          - pickup moveable items
+              - there should be at least 2 items that cannot be moved.
+          - view player inventory
+      
+      Stretch Goals:
+          - drop items in "current room" (if a player picks up an item in one room and moves to another, they should be able to remove it from their inventory)
+          - create win/lose conditions.
+              - this could be a puzzle that may require an item to be within the players inventory to move forward, etc.
+
+      HINTS:
+          - consider the various methods that are available to use.
+          - arrays are a great way to hold "lists".
+          - You are not limited to just the exported function. Build additional functions and don't forget to hold the return within a variable.
+          - Review notes!
+              - Have them open as you build.
+              - break down each problem into small chunks
+                  - What is the process of picking up an item exactly? ex: Look. Pick from a list of items. Put into players list of items... 
+  */
+
+  // Your code here
+  
+  //Command List
+  let commands = "The possible commands are: 'Observe' - look around current room, 'Search' - look for items in the room, 'Items' - view collected objects, 'Move to ___ Room' - move to the desired room, 'Pick up ____' - pick up an item."
+
+  if (playerInput.includes("Help")) {
+      return commands;
+  };
+
+  // Constructing the rooms of the game.
+class Rooms {
+  constructor(name, description, inventory) {
+      this.name = name;
+      this.description = description;
+      this.inventory = inventory;
+  }
+}
+
+
+// The rooms: name, description, and items in them.
+let startingRoom = new Rooms('Starting Room', 'The STARTING ROOM is just the beginninng of this game. It needs to be here to get going. It looks like the only other place to go is a Foyer Room.', []);
+
+let foyerRoom = new Rooms("Foyer", "Welcome to the FOYER. Such a fancy title for such a small room. It doesn't look like there is much here, just four walls, the door you just walked through, and one more door. Maybe there is something in the Next Room.", [' houseShoes']);
+
+let nextRoom = new Rooms("Next Room", "Welcome to the NEXT ROOM. Again, not the most exciting place, this room only has the door you just walked through and a Stairs Room ahead. Although there does seem to be a lot of fruit on the floor.", [' apple', ' rottenApple']);
+
+let stairsRoom = new Rooms("Staircase", "Phew! Good thing you brought that snack, this STAIRCASE is huge! Must be 100 stairs here, and nothing else but the Hall Room at the top.", [' stairs']);
+
+let hallRoom = new Rooms("Hallway", "Sure is creepy up here in the HALLWAY, there is hardly any light up here. Maybe there's something around to help see where the Bath Room is.", [' flashlight']);
+
+let bathRoom = new Rooms("Bathroom", "Finally, made it to the BATHROOM! Talk about privacy.", [' toilet']);
+
+// State Machine for moving between rooms.
+// Issues - Can only move forward one room. I've altered my code to start in different rooms and that will allow me to explore the game in the browser. It seems like I am not able to set the newRoom variable. This also means I cannot move backwards through a previous room.
+let locationSites = {
+  startingRoom: startingRoom,
+  foyerRoom: foyerRoom,
+  nextRoom: nextRoom,
+  stairsRoom: stairsRoom,
+  hallRoom: hallRoom,
+  bathRoom: bathRoom
+}
+
+let room = {
+  startingRoom: ['foyerRoom'],
+  foyerRoom: ['nextRoom', 'startingRoom'],
+  nextRoom: ['foyerRoom', 'stairsRoom'],
+  stairsRoom: ['nextRoom', 'hallRoom'],
+  hallRoom: ['stairsRoom', 'bathroom'],
+  bathRoom: ['hallRoom']
+}
+
+let currentRoom = 'startingRoom';
+let newRoom;
+
+function enterRoom(newRoom) {
+  console.log(newRoom);
+  console.log(typeof newRoom);
+  let validTransition = room[currentRoom];
+//console.log(validTransition);
+  if (validTransition.includes(newRoom)) {
+      currentRoom = newRoom;
+      console.log(currentRoom);
+      return `Welcome to the ${locationSites[currentRoom].name}.`;
+      } else {
+          return `You can't get there, the ${newRoom}, from here, the ${currentRoom}. Try ${validTransition.join(', ')}.`;
+      } 
+  }
+ // enterRoom(startingRoom);
+console.log(newRoom);
+console.log(currentRoom);
+  
+// Moving from room to room.
+//let currentRoom = 'startingRoom';
+  if (playerInput.includes("Move to Starting Room")) {
+      return enterRoom("startingRoom");
+};
+  if (playerInput.includes("Move to Foyer Room")) {
+      return enterRoom("foyerRoom");
+};
+  if (playerInput.includes("Move to Next Room")) {
+      return enterRoom("nextRoom");
+};
+  if (playerInput.includes("Move to Stairs Room")) {
+      return enterRoom("stairsRoom");
+};
+  if (playerInput.includes("Move to Hall Room")) {
+      return enterRoom("hallRoom");
+};
+  if (playerInput.includes("Move to Bath Room")) {
+      return enterRoom("bathRoom");
+};
+
+//Observing Current Room.
+//Issues - Because my State Machine is not functioning, the Observe command will always return with the startingRoom description. Other room descriptions can be seen if the code is changed so the game begins with the currentRoom as something other than startingRoom.
+if (currentRoom == 'startingRoom' && playerInput.includes("Observe")) {
+  return startingRoom.description;
+};
+if (currentRoom == 'foyerRoom' && playerInput.includes("Observe")) {
+  return foyerRoom.description;
+};
+if (currentRoom == 'nextRoom' && playerInput.includes("Observe")) {
+  return nextRoom.description;
+};
+if (currentRoom == 'stairsRoom' && playerInput.includes("Observe")) {
+  return stairsRoom.description;
+};
+if (currentRoom == 'hallRoom' && playerInput.includes("Observe")) {
+  return hallRoom.description;
+};
+if (currentRoom == 'bathRoom' && playerInput.includes("Observe")) {
+  return bathRoom.description;
+};
+
+//Searching Current Room for Items.
+if (currentRoom == 'startingRoom' && playerInput.includes("Search")) {
+  return "Nothing in here.";
+};
+if (currentRoom == 'foyerRoom' && playerInput.includes("Search")) {
+  return foyerRoom.inventory;
+};
+if (currentRoom == 'nextRoom' && playerInput.includes("Search")) {
+  return nextRoom.inventory;
+};
+if (currentRoom == 'stairsRoom' && playerInput.includes("Search")) {
+  return stairsRoom.inventory;
+};
+if (currentRoom == 'hallRoom' && playerInput.includes("Search")) {
+  return hallRoom.inventory;
+};
+if (currentRoom == 'bathRoom' && playerInput.includes("Search")) {
+  return bathRoom.inventory;
+};
+
+// Establishing player's inventory.
+//let gameIventory = [' houseShoes', ' apple', ' rottenApple', ' stairs', ' flashlight', ' toilet'];
+// Issues - .push is not adding items to the Inventory Array. .splice is also not working.
+let inventory = [];
+
+//function pickUp(item) {
+//  inventory.push(item);
+
+//if (currentRoom == 'foyerRoom' && playerInput.includes("Pick up houseShoes")) {
+//pickUp(houseShoes);
+//return inventory;
+//};
+
+//} - Tried making this work by using a function as well. Did not work, console displays: houseShoes is not defined.
+
+if (playerInput.includes("Items")) {
+console.log(inventory);
+return 'You are holding: ' + inventory;
+}; 
+
+if (currentRoom == 'foyerRoom' && playerInput.includes("Pick up houseShoes")) {
+inventory.push("houseShoes");
+return `Now you have ` + inventory;
+};
+
+if (currentRoom == 'nextRoom' && playerInput.includes("Pick up apple")) {
+inventory.push('apple');
+return `Now you have ` + inventory;
+};
+if (currentRoom == 'nextRoom' && playerInput.includes("Pick up rottenApple")) {
+return `No way!`;
+};
+
+if (currentRoom == 'stairsRoom' && playerInput.includes("Pick up stairs")) {
+return `No way!`;
+};
+
+if (currentRoom == 'hallRoom' && playerInput.includes("Pick up flashlight")) {
+inventory.push('flashlight');
+return `Now you have ` + inventory;
+};
+
+if (currentRoom == 'bathRoom' && playerInput.includes("Pick up toilet")) {
+return `No way!`;
+};
+
+
+};
+
+//------------------------------------------------------------------//

@@ -1,0 +1,497 @@
+JEOPARDY 2 --- JS
+
+document.getElementById("playerTwoTurn").disabled = true;
+document.getElementById("guess").disabled = true;
+document.getElementById("pass").disabled = true;
+document.getElementsByClassName("nextButton").disabled = true; // Can't disable, not sure why.
+
+
+const qst1 = document.getElementById("two-hundred-1");
+qst1.addEventListener("click", function() {
+    document.getElementById("two-hundred-1").innerText = placeholderQuestions[0].question;
+});
+const qst2 = document.getElementById("four-hundred-1");
+qst2.addEventListener("click", function() {
+    document.getElementById("four-hundred-1").innerText = placeholderQuestions[1].question;
+});
+const qst3 = document.getElementById("six-hundred-1");
+qst3.addEventListener("click", function() {
+    document.getElementById("six-hundred-1").innerText = placeholderQuestions[2].question;
+});
+const qst4 = document.getElementById("eight-hundred-1");
+qst4.addEventListener("click", function() {
+    document.getElementById("eight-hundred-1").innerText = placeholderQuestions[3].question;
+});
+const qst5 = document.getElementById("one-thousand-1");
+qst5.addEventListener("click", function() {
+    document.getElementById("one-thousand-1").innerText = placeholderQuestions[4].question;
+});
+const qst6 = document.getElementById("two-hundred-2");
+qst6.addEventListener("click", function() {
+    document.getElementById("two-hundred-2").innerText = placeholderQuestions[10].question;
+});
+const qst7 = document.getElementById("four-hundred-2");
+qst7.addEventListener("click", function() {
+    document.getElementById("four-hundred-2").innerText = placeholderQuestions[11].question;
+});
+const qst8 = document.getElementById("six-hundred-2");
+qst8.addEventListener("click", function() {
+    document.getElementById("six-hundred-2").innerText = placeholderQuestions[12].question;
+});
+const qst9 = document.getElementById("eight-hundred-2");
+qst9.addEventListener("click", function() {
+    document.getElementById("eight-hundred-2").innerText = placeholderQuestions[13].question;
+});
+const qst10 = document.getElementById("one-thousand-2");
+qst10.addEventListener("click", function() {
+    document.getElementById("one-thousand-2").innerText = placeholderQuestions[14].question;
+});
+const qst11 = document.getElementById("two-hundred-3");
+qst11.addEventListener("click", function() {
+    document.getElementById("two-hundred-3").innerText = placeholderQuestions[20].question;
+});
+const qst12 = document.getElementById("four-hundred-3");
+qst12.addEventListener("click", function() {
+    document.getElementById("four-hundred-3").innerText = placeholderQuestions[21].question;
+});
+const qst13 = document.getElementById("six-hundred-3");
+qst13.addEventListener("click", function() {
+    document.getElementById("six-hundred-3").innerText = placeholderQuestions[22].question;
+});
+const qst14 = document.getElementById("eight-hundred-3");
+qst14.addEventListener("click", function() {
+    document.getElementById("eight-hundred-3").innerText = placeholderQuestions[23].question;
+});
+const qst15 = document.getElementById("one-thousand-3");
+qst15.addEventListener("click", function() {
+    document.getElementById("one-thousand-3").innerText = placeholderQuestions[24].question;
+});
+const qst16 = document.getElementById("two-hundred-4");
+qst16.addEventListener("click", function() {
+    document.getElementById("two-hundred-4").innerText = placeholderQuestions[30].question;
+});
+const qst17 = document.getElementById("four-hundred-4");
+qst17.addEventListener("click", function() {
+    document.getElementById("four-hundred-4").innerText = placeholderQuestions[31].question;
+});
+const qst18 = document.getElementById("six-hundred-4");
+qst18.addEventListener("click", function() {
+    document.getElementById("six-hundred-4").innerText = placeholderQuestions[32].question;
+});
+const qst19 = document.getElementById("eight-hundred-4");
+qst19.addEventListener("click", function() {
+    document.getElementById("eight-hundred-4").innerText = placeholderQuestions[33].question;
+});
+const qst20 = document.getElementById("one-thousand-4");
+qst20.addEventListener("click", function() {
+    document.getElementById("one-thousand-4").innerText = placeholderQuestions[34].question;
+});
+const qst21 = document.getElementById("two-hundred-5");
+qst21.addEventListener("click", function() {
+    document.getElementById("two-hundred-5").innerText = placeholderQuestions[40].question;
+});
+const qst22 = document.getElementById("four-hundred-5");
+qst22.addEventListener("click", function() {
+    document.getElementById("four-hundred-5").innerText = placeholderQuestions[41].question;
+});
+const qst23 = document.getElementById("six-hundred-5");
+qst23.addEventListener("click", function() {
+    document.getElementById("six-hundred-5").innerText = placeholderQuestions[42].question;
+});
+const qst24 = document.getElementById("eight-hundred-5");
+qst24.addEventListener("click", function() {
+    document.getElementById("eight-hundred-5").innerText = placeholderQuestions[43].question;
+});
+const qst25 = document.getElementById("one-thousand-5");
+qst25.addEventListener("click", function() {
+    document.getElementById("one-thousand-5").innerText = placeholderQuestions[44].question;
+});
+const qst26 = document.getElementById("two-hundred-6");
+qst26.addEventListener("click", function() {
+    document.getElementById("two-hundred-6").innerText = placeholderQuestions[50].question;
+});
+const qst27 = document.getElementById("four-hundred-6");
+qst27.addEventListener("click", function() {
+    document.getElementById("four-hundred-6").innerText = placeholderQuestions[51].question;
+});
+const qst28 = document.getElementById("six-hundred-6");
+qst28.addEventListener("click", function() {
+    document.getElementById("six-hundred-6").innerText = placeholderQuestions[52].question;
+});
+const qst29 = document.getElementById("eight-hundred-6");
+qst29.addEventListener("click", function() {
+    document.getElementById("eight-hundred-6").innerText = placeholderQuestions[53].question;
+});
+const qst30 = document.getElementById("one-thousand-6");
+qst30.addEventListener("click", function() {
+    document.getElementById("one-thousand-6").innerText = placeholderQuestions[54].question;
+});
+const qst31 = document.getElementById("four-hundred-1");
+qst31.addEventListener("click", function() {
+    document.getElementById("four-hundred-1").innerText = placeholderQuestions[5].question;
+});
+const qst32 = document.getElementById("eight-hundred-1");
+qst32.addEventListener("click", function() {
+    document.getElementById("eight-hundred-1").innerText = placeholderQuestions[6].question;
+});
+const qst33 = document.getElementById("twelve-hundred-1");
+qst33.addEventListener("click", function() {
+    document.getElementById("twelve-hundred-1").innerText = placeholderQuestions[7].question;
+});
+const qst34 = document.getElementById("sixteen-hundred-1");
+qst34.addEventListener("click", function() {
+    document.getElementById("sixteen-hundred-1").innerText = placeholderQuestions[8].question;
+});
+const qst35 = document.getElementById("two-thousand-1");
+qst35.addEventListener("click", function() {
+    document.getElementById("two-thousand-1").innerText = placeholderQuestions[9].question;
+});
+
+
+const qst36 = document.getElementById("four-hundred-2");
+qst36.addEventListener("click", function() {
+    document.getElementById("four-hundred-2").innerText = placeholderQuestions[15].question;
+});
+const qst37 = document.getElementById("eight-hundred-2");
+qst37.addEventListener("click", function() {
+    document.getElementById("eight-hundred-2").innerText = placeholderQuestions[16].question;
+});
+const qst38 = document.getElementById("twelve-hundred-2");
+qst38.addEventListener("click", function() {
+    document.getElementById("twelve-hundred-2").innerText = placeholderQuestions[17].question;
+});
+const qst39 = document.getElementById("sixteen-hundred-2");
+qst39.addEventListener("click", function() {
+    document.getElementById("sixteen-hundred-2").innerText = placeholderQuestions[18].question;
+});
+const qst40 = document.getElementById("two-thousand-2");
+qst40.addEventListener("click", function() {
+    document.getElementById("two-thousand-2").innerText = placeholderQuestions[19].question;
+});
+
+
+
+const qst41 = document.getElementById("four-hundred-3");
+qst41.addEventListener("click", function() {
+    document.getElementById("four-hundred-3").innerText = placeholderQuestions[25].question;
+});
+const qst42 = document.getElementById("eight-hundred-3");
+qst42.addEventListener("click", function() {
+    document.getElementById("eight-hundred-3").innerText = placeholderQuestions[26].question;
+});
+const qst43 = document.getElementById("twelve-hundred-3");
+qst43.addEventListener("click", function() {
+    document.getElementById("twelve-hundred-3").innerText = placeholderQuestions[27].question;
+});
+const qst44 = document.getElementById("sixteen-hundred-3");
+qst44.addEventListener("click", function() {
+    document.getElementById("sixteen-hundred-3").innerText = placeholderQuestions[28].question;
+});
+const qst45 = document.getElementById("two-thousand-3");
+qst45.addEventListener("click", function() {
+    document.getElementById("two-thousand-3").innerText = placeholderQuestions[29].question;
+});
+
+
+
+
+const qst46 = document.getElementById("four-hundred-4");
+qst46.addEventListener("click", function() {
+    document.getElementById("four-hundred-4").innerText = placeholderQuestions[35].question;
+});
+const qst47 = document.getElementById("eight-hundred-4");
+qst47.addEventListener("click", function() {
+    document.getElementById("eight-hundred-4").innerText = placeholderQuestions[36].question;
+});
+const qst48 = document.getElementById("twelve-hundred-4");
+qst48.addEventListener("click", function() {
+    document.getElementById("twelve-hundred-4").innerText = placeholderQuestions[37].question;
+});
+const qst49 = document.getElementById("sixteen-hundred-4");
+qst49.addEventListener("click", function() {
+    document.getElementById("sixteen-hundred-4").innerText = placeholderQuestions[38].question;
+});
+const qst50 = document.getElementById("two-thousand-4");
+qst50.addEventListener("click", function() {
+    document.getElementById("two-thousand-4").innerText = placeholderQuestions[39].question;
+});
+
+
+
+const qst51 = document.getElementById("four-hundred-5");
+qst51.addEventListener("click", function() {
+    document.getElementById("four-hundred-5").innerText = placeholderQuestions[45].question;
+});
+const qst52 = document.getElementById("eight-hundred-5");
+qst52.addEventListener("click", function() {
+    document.getElementById("eight-hundred-5").innerText = placeholderQuestions[46].question;
+});
+const qst53 = document.getElementById("twelve-hundred-5");
+qst53.addEventListener("click", function() {
+    document.getElementById("twelve-hundred-5").innerText = placeholderQuestions[47].question;
+});
+const qst54 = document.getElementById("sixteen-hundred-5");
+qst54.addEventListener("click", function() {
+    document.getElementById("sixteen-hundred-5").innerText = placeholderQuestions[48].question;
+});
+const qst55 = document.getElementById("two-thousand-5");
+qst55.addEventListener("click", function() {
+    document.getElementById("two-thousand-5").innerText = placeholderQuestions[49].question;
+});
+
+
+
+const qst56 = document.getElementById("four-hundred-6");
+qst56.addEventListener("click", function() {
+    document.getElementById("four-hundred-6").innerText = placeholderQuestions[55].question;
+});
+const qst57 = document.getElementById("eight-hundred-6");
+qst57.addEventListener("click", function() {
+    document.getElementById("eight-hundred-6").innerText = placeholderQuestions[56].question;
+});
+const qst58 = document.getElementById("twelve-hundred-6");
+qst58.addEventListener("click", function() {
+    document.getElementById("twelve-hundred-6").innerText = placeholderQuestions[57].question;
+});
+const qst59 = document.getElementById("sixteen-hundred-6");
+qst59.addEventListener("click", function() {
+    document.getElementById("sixteen-hundred-6").innerText = placeholderQuestions[58].question;
+});
+const qst60 = document.getElementById("two-thousand-6");
+qst60.addEventListener("click", function() {
+    document.getElementById("two-thousand-6").innerText = placeholderQuestions[59].question;
+});
+
+
+let playerOneTurn = true;
+let playerTwoTurn = false;
+
+//console.log(placeholderQuestions[0].category);
+//placeholderQuestions.forEach(obj => {
+//    console.log(obj);
+//})
+
+console.log(document.location);
+
+
+HTML
+
+<!-- States who's turn it is
+  Setting as buttons so I can disable one player at a time -->
+  <div class="playersTurn">
+    <button id="playerOneTurn">PLAYER ONE'S TURN</button> <button id="playerTwoTurn">PLAYER TWO'S TURN</button>
+  </div>
+
+    <br>
+<!-- Categories and the questions / value boxes -->
+    <h3>
+        <div class="category">
+          Nature
+        </div>
+        <div class="category">
+          Animals
+        </div> 
+        <div class="category">
+          Computers
+        </div>   
+        <div class="category">
+          Mythology
+        </div>       
+        <div class="category">
+          History
+        </div>       
+        <div class="category">
+          General
+        </div>        
+    </h3>
+        
+        
+          
+          <div class="twoHundred"> 
+          <div id="two-hundred-1">
+            200
+          </div>
+           <div id="two-hundred-2">
+            200
+           </div>    
+           <div id="two-hundred-3">
+            200
+          </div>      
+          <div id="two-hundred-4">
+            200
+          </div>        
+          <div id="two-hundred-5">
+            200
+          </div>       
+          <div id="two-hundred-6">
+            200
+          </div>         
+        </div>
+
+        <div class="fourHundred"> 
+            <div id="four-hundred-1">
+              400
+            </div>
+            <div id="four-hundred-2">
+              400
+             </div>    
+             <div id="four-hundred-3">
+              400
+            </div>      
+            <div id="four-hundred-4">
+              400
+            </div>        
+            <div id="four-hundred-5">
+              400
+            </div>       
+            <div id="four-hundred-6">
+              400
+            </div>         
+          </div>
+
+          <div class="sixHundred"> 
+            <div id="six-hundred-1">
+              600
+            </div>
+            <div id="six-hundred-2">
+              600
+             </div>    
+             <div id="six-hundred-3">
+              600
+            </div>      
+            <div id="six-hundred-4">
+              600
+            </div>
+            <div id="six-hundred-5">        
+              600
+            </div>       
+            <div id="six-hundred-6">
+              600
+            </div>         
+          </div>
+
+          <div class="eightHundred"> 
+            <div id="eight-hundred-1">
+              800
+            </div>
+            <div id="eight-hundred-2">
+              800
+             </div>    
+             <div id="eight-hundred-3">
+              800
+            </div>      
+            <div id="eight-hundred-4">
+              800
+            </div>        
+            <div id="eight-hundred-5">
+              800
+            </div>       
+            <div id="eight-hundred-6">
+              800
+            </div>         
+          </div>
+
+          <div class="oneThousand"> 
+            <div id="one-thousand-1">
+              1000
+            </div>
+            <div id="one-thousand-2">
+              1000
+             </div>    
+             <div id="one-thousand-3">
+              1000
+            </div>      
+            <div id="one-thousand-4">
+              1000
+            </div>        
+            <div id="one-thousand-5">
+              1000
+            </div>       
+            <div id="one-thousand-6">
+              1000
+            </div>         
+          </div>
+
+          <br>
+          <br>
+<!-- Area to type in response, submit response, or pass to other player -->
+          <div class="response">
+  
+            <form action="/action_page.php">
+             <input type="text" id="text" name="text" value="User input..."><br>
+             <input type="submit" id="guess" value="GUESS">
+             <input type="submit" id="pass" value="PASS">
+            </form>
+
+          </div>
+      
+          <br>
+          <br>
+             <!-- Score Tracker -->
+          <div id="scores">
+        
+            <div class="playerOneScore">
+          Player 1 Score: <div id="oneScore"></div>
+            </div>
+            
+           <div class="playerTwoScore">  
+             
+              Player 2 Score: <div id="twoScore"></div>
+        </div>
+      
+          </div>
+      
+          <br>
+      <!-- Button to move to Round 2 -->
+          <div class="nextButton">
+              <a href="round-2.html" id="next">Next Round</a>
+          </div>
+      
+          <br>
+      
+          <footer>
+              FOOTER SITE INFORMATION
+          </footer>
+    <!-- Do not change the script source. Allows import/export to work. -->
+    <script src="./scripts/index.js" type="module"></script>
+  </body>
+</html>
+
+
+index
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Jeopardy</title>
+  </head>
+  <body>
+    <!-- Title and Opening Game-->
+    <h1><b>Welcome to Jeopardy!</b></h1>
+    
+    <br>
+
+    <div class="gamePicture">
+    <img src="https://picsum.photos/900/500" alt="Game Picture">
+    </div>
+
+    <br>
+<!-- Start Game Button leads to 1st Round -->
+    <div class="playButton">
+        <a href="./round-1.html" id="play">PLAY</a>
+    </div>
+
+    <br>
+
+    <footer>
+        FOOTER SITE INFORMATION
+    </footer>
+    <!-- Do not change the script source. Allows import/export to work. -->
+    <script src="./scripts/index.js" type="module"></script>
+  </body>
+</html>
+
